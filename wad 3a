@@ -1,0 +1,42 @@
+//seev.js
+const express = require('express');
+const abc = express();
+
+const path = require("path")
+
+const PORT = 8000
+
+abc.use(express.static('public'));
+
+abc.get('/', function(req, res) {
+    res.send('Hello World!');
+});
+
+abc.listen(PORT, function(){
+
+ console.log(`Server listening on port::${PORT}`);
+
+});
+
+// a.html
+<html>
+    <body>
+        <h1> This is an example of serving static files</h1>
+        <table>
+            <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            </tr>
+
+            <tr>
+                <td>Abhi</td>
+                <td>Biradar</td>
+            </tr>
+
+            <tr>
+                <td> Shree </td>
+                <td> Shinde </td>
+            </tr>
+        </table>
+    </body>
+</html>
